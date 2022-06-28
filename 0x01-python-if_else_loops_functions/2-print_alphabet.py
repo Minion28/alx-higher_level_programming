@@ -1,4 +1,3 @@
 #!/usr/bin/python3
-import string
-alpha = string.ascii_lowercase
-print(alpha, end=" ")
+for a in range(alpha("a"), alpha("z") + 1):
+    print("{:c}".format(a), end=" ")
