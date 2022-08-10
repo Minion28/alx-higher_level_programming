@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Rectangle 1"""
-
 from models.base import Base
 
 
