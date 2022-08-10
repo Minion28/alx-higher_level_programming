@@ -5,8 +5,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """A rectangle class that inherits from
-    the base class"""
+    """A rectangle class that inherits from the base class"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructs the rectange's attributes"""
@@ -73,24 +72,22 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Draws the area of the rectangle"""
+        """Draw area of the rectangle"""
         return self.__height * self.__width
 
     def display(self):
-        """prints in stdout the Rectangle instance
-        with the character #"""
+        """print in stdout the Rectangle instance with the character #"""
         print("\n" * self.y,  end="")
         print((" " * self.x + "#" * self.__width + '\n') * self.__height, end="")
 
     def __str__(self):
-        """String representation of the rectangle class"""
+        """String representation of rectangle class"""
         str_res = "[Rectangle] ({}) {}/{} - {}/{}"\
             .format(self.id, self.x, self.y, self.__width, self.__height)
         return str_res
 
     def update(self, *args, **kwargs):
-        """Updates rectangle class and
-        assigns an argument to each attribute"""
+        """Updates rectangle class and assigns an argument to each attribute"""
         if not args and not kwargs:
             return
         if args is not None:
@@ -104,8 +101,7 @@ class Rectangle(Base):
                     setattr(self, k, v)
 
     def to_dictionary(self):
-        """Returns the dictionary representation of a
-        rectangle"""
+        """Return the dictionary representation of a rectangle"""
         _map = {}
         for key, value in self.__dict__.items():
             if key.startswith("_"):
