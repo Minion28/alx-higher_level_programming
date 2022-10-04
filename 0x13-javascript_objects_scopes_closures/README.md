@@ -1,1 +1,1 @@
-objects scopes closures directory
+objects scopes closures
