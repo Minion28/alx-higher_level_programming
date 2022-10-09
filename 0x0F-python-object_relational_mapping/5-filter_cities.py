@@ -24,5 +24,5 @@ if __name__ == "__main__":
 
     print(", ".join([city[0] for city in allcities]))
 
-    cur.close()
+    c.close()
     db.close()

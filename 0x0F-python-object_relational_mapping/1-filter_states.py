@@ -20,7 +20,7 @@ if __name__ == "__main__":
              ORDER BY id ASC;
              """
     c.execute(cmd)
-    allstates = cur.fetchall()
+    allstates = c.fetchall()
 
     for state in allstates:
         print(state)
