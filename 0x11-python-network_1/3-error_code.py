@@ -3,15 +3,16 @@
 Take in a URL, send a request to URL, and displays the body of response decoded in utf-8
 '''
 
-import sys
-import urllib.error
-import urllib.request
+from sys import argv
+import urllib.request as request
+import urllib.error as error
 
+if __name__ == '__main__':
 
-if __name__ == "__main__":
-    req = urllib.request.Request(sys.argv[1])
     try:
-        with urllib.request.urlopen(req) as response:
-            print(response.read().decode('utf-8'))
-    except urllib.error.URLError as err:
-        print("Error code: {}".format(err.code))
+        with request.urlopen(argv[1]) as r:
+            html = r.read()
+            utf8 = html.decode('utf-8')
+            print(utf8)
+    except error.HTTPError as e:
+        print("Error code: {}".format(e.code))
